@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Calc",
-  description: "A calculator app",
+  title: "Calculator",
+  description: "A calculator app using Next JS",
   manifest: "/manifest.json",
 };
 
