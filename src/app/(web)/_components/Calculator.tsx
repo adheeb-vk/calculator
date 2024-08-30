@@ -1,7 +1,4 @@
 "use client"
-import { error } from 'console';
-import { parse } from 'path';
-import { stringify } from 'querystring';
 import React, { use, useEffect, useState } from 'react'
 
 function Calculator() {
