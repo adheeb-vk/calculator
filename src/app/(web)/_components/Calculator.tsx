@@ -7,9 +7,9 @@ const numbers = ["1","2","3","+","4","5","6","-","7","8","9","/","C","0","CE","*
 
 const [value, setValue] = useState("")
 
-useEffect(()=>{
-    console.log(value)
-}, [value])
+// useEffect(()=>{
+//     console.log(value)
+// }, [value])
 
 const handleClick = (val : any) => {
     if(value === "Error" || value === "0" || value === "Infinity"){
@@ -33,40 +33,11 @@ const handleClick = (val : any) => {
             setValue(value + val);
         }
     }
-    // if(value !== 'Error'){
-    //     if(value !== '0'){
-    //         if (val === 'C') {
-    //             setValue('');
-    //         } else if ( val === 'CE') {
-    //             // if(){
-    //             try{
-    //             setValue(value.slice(0, -1));
-    //             }catch(error){
-    //                 setValue("")
-    //             }
-    //             // }
-    //         } else {
-    //             setValue(value + val);
-    //         }
-    //     }else{
-    //         if(val === "C" || val === "CE"){
-    //             setValue("")
-    //         }else{
-    //             setValue(val)
-    //         }
-    //     }
-    // }else{
-    //     if(val === "C" || val === "CE"){
-    //         setValue("")
-    //     }else{
-    //         setValue(val)
-    //     }
-    // }
 };
 
   return (
     <div className='w-[24%] p-2 max-[1180px]:w-[30%] max-[970px]:w-[32%] max-[860px]:w-[36%] max-[780px]:w-[38%] bg-[#191919] max-[710px]:w-[40%] max-[640px]:w-[50%] max-[540px]:w-[60%] max-[460px]:w-[70%] max-[380px]:w-[80%] max-[360px]:w-full'>
-      <div className='text-center mb-2 bg-black py-4 text-2xl rounded-md text-black font-bold bg-[#f0f0f0]'>{value === "" ? "Calculator" : value}</div>
+      <div className='text-center mb-2 bg-black py-4 text-2xl rounded-md text-black font-bold bg-white'>{value === "" ? "Calculator" : value}</div>
       <div className='bg-black py-2'>
         <ul className='flex items-center justify-center gap-3 w-full flex-wrap'>
             {numbers.map((number, index)=>{
