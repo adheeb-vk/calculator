@@ -12,23 +12,27 @@ const [value, setValue] = useState("")
 // }, [value])
 
 const handleClick = (val : any) => {
-    if (val === 'C') {
-        setValue('');
-    } else if ( val === 'CE') {
-        // if(){
-        try{
-        setValue(value.slice(0, -1));
-        }catch(error){
-            setValue("")
+    if(value !== 'Error'){
+        if (val === 'C') {
+            setValue('');
+        } else if ( val === 'CE') {
+            // if(){
+            try{
+            setValue(value.slice(0, -1));
+            }catch(error){
+                setValue("")
+            }
+            // }
+        } else {
+            setValue(value + val);
         }
-        // }
-    } else {
-        setValue(value + val);
+    }else{
+        setValue(val)
     }
 };
 
   return (
-    <div className='w-[24%] p-2 max-[1180px]:w-[30%] max-[970px]:w-[32%] max-[860px]:w-[36%] max-[780px]:w-[38%] max-[710px]:w-[40%] max-[640px]:w-[50%] max-[540px]:w-[60%] max-[460px]:w-[70%] max-[380px]:w-[80%] max-[360px]:w-[90%] max-[300px]:w-full'>
+    <div className='w-[24%] p-2 max-[1180px]:w-[30%] max-[970px]:w-[32%] max-[860px]:w-[36%] max-[780px]:w-[38%] max-[710px]:w-[40%] max-[640px]:w-[50%] max-[540px]:w-[60%] max-[460px]:w-[70%] max-[380px]:w-[80%] max-[360px]:w-full'>
       <div className='text-center mb-4 text-2xl'>{value === "" ? "Calculator" : value}</div>
       <div className='bg-black'>
         <ul className='flex items-center justify-center gap-3 w-full flex-wrap'>
