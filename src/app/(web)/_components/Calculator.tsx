@@ -22,13 +22,11 @@ const handleClick = (val : any) => {
         if (val === 'C') {
             setValue('');
         } else if ( val === 'CE') {
-            // if(){
             try{
             setValue(value.slice(0, -1));
             }catch(error){
                 setValue("")
             }
-            // }
         } else {
             setValue(value + val);
         }
@@ -50,8 +48,8 @@ const handleClick = (val : any) => {
                 </li>
             )
             })}
-            <li className='w-[92%] text-center w-[20%] rounded-lg overflow-hidden'>
-                <button className='text-center bg-green-900 py-6 w-full' onClick={()=>{
+            <li className='w-[92%] flex justify-between text-center w-[20%] overflow-hidden'>
+                <button className='text-center bg-green-900 py-6 w-[75%] rounded-lg' onClick={()=>{
                     try {
                         if(value !== ""){
                             setValue(String(eval(value)));
@@ -60,6 +58,9 @@ const handleClick = (val : any) => {
                         setValue('Error');
                     }
                 }}>=</button>
+                <button className='bg-green-300 py-6 max-[360px]:py-4 font-bold text-black rounded-lg w-[21%]' onClick={()=>{
+                    handleClick(".")
+                }}>.</button>
             </li>
         </ul>
       </div>
